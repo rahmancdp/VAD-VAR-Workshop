@@ -15,7 +15,9 @@
     "velite": "npx velite",
     "velite:watch": "cross-env NODE_ENV=development npx velite dev",
     "symlink:create": "./bin/create_symlink.mjs",
-    "symlink:rm": "./bin/remove_symlink.mjs"
+    "symlink:rm": "./bin/remove_symlink.mjs",
+    "postinstall": "if test ! \"$NODE_ENV\" = \"production\" ; then npm run setup-detect-secrets ; fi",
+    "setup-detect-secrets": "pipx install 'git+https://github.com/ibm/detect-secrets.git@master#egg=detect-secrets' && pipx install pre-commit && pre-commit install"
   },
   "dependencies": {
     "@carbon/react": "^1.52.0",
