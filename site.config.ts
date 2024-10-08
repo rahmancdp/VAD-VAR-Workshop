@@ -8,8 +8,7 @@ const config = {
   },
   owner: 'ibm-build-lab',
   repo: 'VAD-VAR-Workshop',
-  description:
-    'Documentation style site template for Next.js and Carbon Design',
+  description: 'IBM VEST learning content',
   image: '/rebus.jpg'
 };
 
