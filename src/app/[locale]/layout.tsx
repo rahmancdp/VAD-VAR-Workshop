@@ -1,24 +1,15 @@
 import pick from 'lodash/pick';
-import { Metadata } from 'next';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { ReactNode } from 'react';
 import UIShell from '#/components/ui/UIShell';
 import { SLUG_TREE } from '#/lib/velite';
-import baseMetadata from '#/shared-metadata';
 import { Locale, SUPPORTED_LOCALES } from '#i18n-config';
 
 interface LocaleLayoutProps {
   children: ReactNode;
   params: { locale: Locale };
 }
-
-/**
- * SEO metadata
- *
- * @see https://nextjs.org/docs/app/api-reference/functions/generate-metadata
- */
-export const metadata: Metadata = baseMetadata;
 
 /**
  * SSG function to determine slugs to prerender

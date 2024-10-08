@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import FragmentLoader from '#/components/custom/FragmentLoader';
 import NavTile from '#/components/custom/NavTile';
@@ -6,11 +7,19 @@ import { QuizAlert } from '#/components/shortcodes';
 import { PageHeader } from '#/components/ui';
 import { SLUG_MAP } from '#/lib/velite';
 import { SLUG_TREE } from '#/lib/velite';
+import baseMetadata from '#/shared-metadata';
 import styles from './page.module.scss';
 
 interface PageProps {
   params: { locale: string };
 }
+
+/**
+ * SEO metadata
+ *
+ * @see https://nextjs.org/docs/app/api-reference/functions/generate-metadata
+ */
+export const metadata: Metadata = baseMetadata;
 
 /**
  * SSG function to determine slugs to prerender
