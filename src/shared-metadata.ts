@@ -53,7 +53,7 @@ const baseMetadata: Metadata = {
  * @returns merged metadata object
  */
 export function generateMergedMetadata(partialMetadata: Metadata) {
-  return merge(baseMetadata, partialMetadata);
+  return merge(JSON.parse(JSON.stringify(baseMetadata)), partialMetadata);
 }
 
 export default baseMetadata;
